@@ -5,10 +5,11 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from json import load, dump
 
-TOKEN = ""  # <-- put your bot token here (string)
-MY_ID = 12  # <-- put your telegram id here (int)
+TOKEN = ""    # <-- put your bot token here (string)
+COUNTRY = ""  # <-- put your alpha-2 country code here (string)
+MY_ID = 12    # <-- put your telegram id here (int)
 
-STORE = f"https://itunes.apple.com/lookup?country=us&bundleId="
+STORE = f"https://itunes.apple.com/lookup?country={COUNTRY}&bundleId="
 req_headers = {
     "User-Agent": "FreshRSS/1.11.2 (Linux; https://freshrss.org) like Googlebot",
     "cache-control": "private, max-age=0, no-cache"
