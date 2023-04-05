@@ -33,7 +33,7 @@ def new_monitor(update: Update, context: CallbackContext) -> None:
     try:
         x = get(f"{STORE}{args[1]}", headers=req_headers).json()
         current_ver = x["results"][0]["version"].strip()
-    except KeyError:
+    except (KeyError, IndexError):
         update.message.reply_text("invalid bundle id specified.")
         return
 
